@@ -560,7 +560,7 @@ const contribAdsPlugin = function(options) {
     }
 
     // If the state has changed...
-    if (state !== player.ads.state) {
+    if (state !== player.ads.state && (typeof player.paintObject === "undefined" || player.paintObject === null || event.type !== "adsready")) {
       const previousState = state;
       const newState = player.ads.state;
 
